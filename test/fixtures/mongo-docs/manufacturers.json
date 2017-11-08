@@ -1,0 +1,20 @@
+[
+  {
+    "id":1,
+    "name":"VW",
+    "logo":"http://logo.com/vw",
+    "country":"Germany"
+  },
+  {
+    "id":2,
+    "name":"Opel",
+    "logo":"http://logo.com/opel",
+    "country":"Germany"
+  },
+  {
+    "id":3,
+    "name":"Ford",
+    "logo":"http://logo.com/ford",
+    "country":"USA"
+  }
+]

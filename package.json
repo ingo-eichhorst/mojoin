@@ -1,0 +1,62 @@
+{
+  "name": "mojoin",
+  "version": "0.0.5",
+  "description": "Join two or more collections of one or more MongoDB databases",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "join",
+    "databases",
+    "collections",
+    "key",
+    "csv",
+    "xls",
+    "json"
+  ],
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha ./test/index.js",
+    "test-coverage": "istanbul cover test/index.js --report lcovonly | tap-spec"
+  },
+  "author": {
+    "name": "Ingo Eichhorst",
+    "email": "git@ingo-eichhorst.de",
+    "twitter": "Anno1983"
+  },
+  "bin": {
+    "mojoin": "./lib/index.js"
+  },
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anno1983"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.5.0",
+    "commander": "^2.11.0",
+    "js-binarysearch": "^1.0.2",
+    "js-yaml": "^3.9.1",
+    "json2csv": "^3.11.1",
+    "json2xls": "^0.1.2",
+    "merge": "^1.2.0",
+    "mongodb": "^2.2.31",
+    "node-ssh": "^4.2.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^3.5.0",
+    "node-xlsx": "^0.11.0",
+    "nyc": "^11.1.0",
+    "proxyquire": "^1.8.0"
+  }
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "q": {
+      "query": {},
+      "projection": {
+        "name": 1,
+        "manuafacturer": 1,
+        "id": 1,
+        "_id": false
+      },
+      "db": "ssh://test:test@127.0.0.1/car-db",
+      "collection": "cars"
+    }
+  },
+  {
+    "on": {
+      "key1": "manuafacturer",
+      "key2": "name"
+    },
+    "q": {
+      "query": {
+        "status": "available"
+      },
+      "projection": {
+        "name": 1,
+        "id": 1,
+        "logo": 1,
+        "country": 1,
+        "_id": false
+      },
+      "db": "ssh://test:test@127.0.0.1/manufacturer-db",
+      "collection": "manufacturers"
+    }
+  }
+]

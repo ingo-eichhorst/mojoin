@@ -1,0 +1,57 @@
+[
+  {
+    "q": {
+      "query": {
+        "studio": "Freshwater Films"
+      },
+      "projection": {
+        "studio": 1,
+        "originalTitle": 1,
+        "uuid": 1,
+        "_id": false
+      },
+      "db": "mongodb://vagrant:vagrant@192.168.33.10/title-manager",
+      "collection": "titles"
+    }
+  },
+  {
+    "on": {
+      "key1": "uuid",
+      "key2": "data.titleId"
+    },
+    "q": {
+      "query": {
+        "status": "COMPLETED"
+      },
+      "projection": {
+        "capability": 1,
+        "status": 1,
+        "statusReason": 1,
+        "data.titleId": 1,
+        "_id": false
+      },
+      "db": "ssh://vagrant:vagrant@192.168.33.10/db",
+      "collection": "tasks"
+    }
+  },
+  {
+    "on": {
+      "key1": "uuid",
+      "key2": "producedFor.titleId"
+    },
+    "q": {
+      "query": {
+        "type": "source",
+        "subType": "movie"
+      },
+      "projection": {
+        "type": 1,
+        "name": 1,
+        "producedFor.titleId": 1,
+        "_id": false
+      },
+      "db": "ssh://vagrant:vagrant@192.168.33.10/media-manager",
+      "collection": "media"
+    }
+  }
+]

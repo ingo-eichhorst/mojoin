@@ -1,0 +1,23 @@
+[
+  {
+    "id":1,
+    "name":"Polo",
+    "manuafacturer":"VW",
+    "engine.cylinder":4,
+    "engine.hp":60
+  },
+  {
+    "id":2,
+    "name":"Golf",
+    "manuafacturer":"VW",
+    "engine.cylinder":4,
+    "engine.hp":90
+  },
+  {
+    "id":3,
+    "name":"Manta",
+    "manuafacturer":"Opel",
+    "engine.cylinder":4,
+    "engine.hp":120
+  }
+]
