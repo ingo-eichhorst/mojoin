@@ -1,6 +1,6 @@
 {
   "name": "mojoin",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Join two or more collections of one or more MongoDB databases",
   "directories": {
     "test": "test"
@@ -37,12 +37,14 @@
   "dependencies": {
     "async": "^2.5.0",
     "commander": "^2.11.0",
+    "ejson": "^2.1.2",
     "js-binarysearch": "^1.0.2",
     "js-yaml": "^3.9.1",
     "json2csv": "^3.11.1",
     "json2xls": "^0.1.2",
     "merge": "^1.2.0",
     "mongodb": "^2.2.31",
+    "mongodb-extended-json": "^1.10.0",
     "node-ssh": "^4.2.3"
   },
   "devDependencies": {

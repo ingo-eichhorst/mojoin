@@ -2,7 +2,6 @@ const chai = require('chai')
 const { expect, assert } = chai
 const fs = require('fs')
 
-
 let queries = {
   simple: JSON.parse(fs.readFileSync(__dirname + '/fixtures/queries/simple.json', 'utf8')),
   complex: JSON.parse(fs.readFileSync(__dirname + '/fixtures/queries/complex.json', 'utf8'))
@@ -26,7 +25,7 @@ let joinedDocs = {
 
 // mocking modules
 const proxyquire = require('proxyquire')
-function SSH() {
+function SSH () {
   this.connect = (sshConnectOptions) => {
     return new Promise(function (resolve, reject) {
       if (false) reject('err')
@@ -58,18 +57,18 @@ const mongoMock = {
             }
           }
         },
-        close: () => {}        
+        close: () => {}
       })
     }
   }
 }
 
 // Load internal libraries
-//const index = require('../lib/index.js')
-//const join = require('../lib/join.js')
+// const index = require('../lib/index.js')
+// const join = require('../lib/join.js')
 const utils = require('../lib/utils.js')
 const queryFunctions = require('../lib/query.js')
-const join = proxyquire('../lib/join.js', { 'node-ssh': SSH, 'mongodb': mongoMock });
+const join = proxyquire('../lib/join.js', { 'node-ssh': SSH, 'mongodb': mongoMock })
 
 describe('Validate input', function () {
   it('should validate simple query', function () {
@@ -146,7 +145,6 @@ describe('Query: Load Query', function () {
     let query = queryFunctions.loadQuery(__dirname + '/fixtures/queries/complex.json')
     assert.equal(JSON.stringify(query), JSON.stringify(queries.complex))
   })
-
 })
 
 describe('Query: Load template file', function () {
@@ -169,15 +167,15 @@ describe('Query: Load template file', function () {
   })
 })
 
-describe('Join Arrays On Key', function() {
-  it('should join two arrays on a predefined key', function() {
+describe('Join Arrays On Key', function () {
+  it('should join two arrays on a predefined key', function () {
     let result = join.joinArraysOnKey(docs.cars, 'manuafacturer', docs.manufacturers, 'name')
     console.log(JSON.stringify(result))
     assert.equal(JSON.stringify(result), joinedDocs.carsAndManufacturers)
   })
   // it('should ouput an error when one or more files are corrupt', function() {
   // });
-});
+})
 
 describe('Utils: Flatten Arrays', function () {
   it('should make the object arrays flat and seperated by a dot', function () {
@@ -189,7 +187,7 @@ describe('Utils: Flatten Arrays', function () {
   // });
 })
 
-var xlsx = require('node-xlsx');
+var xlsx = require('node-xlsx')
 describe('Utils: Format output', function () {
   it('should format the output as csv', function () {
     let result = utils.formatData(docs.cars, 'csv')
@@ -214,22 +212,22 @@ describe('Utils: Format output', function () {
   // });
 })
 
-describe('Join: Fetch MongoDB', function() {
-  it('should get MongoDB data over SSH protocol with username + pw', function() {
-    let q = queries.simple[0].q;
-    join.fetchMongo(q.query, q.projection, q.db, q.collection, function(err,result){
+describe('Join: Fetch MongoDB', function () {
+  it('should get MongoDB data over SSH protocol with username + pw', function () {
+    let q = queries.simple[0].q
+    join.fetchMongo(q.query, q.projection, q.db, q.collection, function (err, result) {
       assert.equal(result, docs.cars)
       // expect(result).to.equal(docs.cars)
     })
   })
-//
-// it('should resond with an error if fetching over SSH failed', function() {
-//   //
-// });
-//
-  it('should get MongoDB data over MongoDB protocol', function() {
-    let q = queries.complex[0].q;
-    join.fetchMongo(q.query, q.projection, q.db, q.collection, function(err,result) {
+  //
+  // it('should resond with an error if fetching over SSH failed', function() {
+  //   //
+  // });
+  //
+  it('should get MongoDB data over MongoDB protocol', function () {
+    let q = queries.complex[0].q
+    join.fetchMongo(q.query, q.projection, q.db, q.collection, function (err, result) {
       assert.equal(result, docs.cars)
     })
   })

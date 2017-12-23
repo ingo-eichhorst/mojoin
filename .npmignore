@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+out
+output
+templates
+coverage
+.nyc_output

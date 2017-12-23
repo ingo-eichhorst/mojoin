@@ -1,0 +1,6 @@
+coverage/*
+output/*
+out/*
+templates/*
+test/*
+.nyc_output

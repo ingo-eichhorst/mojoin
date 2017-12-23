@@ -4,8 +4,6 @@
 
 <LOGO>
 
-badges: <test-coverage> <test-passing-last-build> <dependencies-up-to-date>
-
 Mojoin is a tool to join multiple collections from multiple MongoDB databases. 
 
 #### What is that good for?
@@ -20,6 +18,11 @@ But if you have seperate MongoDB databases which is often the case in micro serv
 - Connect via SSH and directly over the mongodb protocol
 
 ## Getting Started
+
+### Prerequisites
+
+- node.js >= 6.0.0
+- mogodb >= 3.0.0
 
 ### UI
 <in development>
@@ -42,11 +45,6 @@ Using a key file
 
 ## Install / Dependencies
 
-### Prerequisites
-
-- node.js >= 6.0.0
-- mogodb >= 3.0.0
-
 ## Usage
 
 ### CLI
@@ -58,3 +56,9 @@ Using a key file
 ### UI
 
 ## Contribute
+
+1. clone master and checkout new branch --> e.g. fix/spacing
+2. Make changes/ fixes
+3. Run `npm test` to check that nothing broke
+4. Run `npm lint` and fix potential style issues
+5. create pull request to master
