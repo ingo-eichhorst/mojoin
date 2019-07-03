@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha ./test/index.js",
-    "test-coverage": "istanbul cover test/index.js --report lcovonly | tap-spec"
+    "test-coverage": "istanbul cover test/index.js --report lcovonly | tap-spec",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": {
     "name": "Ingo Eichhorst",
@@ -43,7 +45,8 @@
     "json2xls": "^0.1.2",
     "merge": "^1.2.0",
     "mongodb": "^2.2.31",
-    "node-ssh": "^4.2.3"
+    "node-ssh": "^4.2.3",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.1.1",
@@ -58,5 +61,6 @@
     "node-xlsx": "^0.11.0",
     "nyc": "^11.1.0",
     "proxyquire": "^1.8.0"
-  }
+  },
+  "snyk": true
 }
