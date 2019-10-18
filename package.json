@@ -42,7 +42,7 @@
     "json2csv": "^3.11.1",
     "json2xls": "^0.1.2",
     "merge": "^1.2.0",
-    "mongodb": "^2.2.31",
+    "mongodb": "^3.1.13",
     "node-ssh": "^4.2.3"
   },
   "devDependencies": {
