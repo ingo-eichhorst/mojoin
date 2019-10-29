@@ -14,7 +14,7 @@
 - [ ] webserver UI (react || vue)
 - [ ] data output for 2D Diagrams/ Dashboards
 
-## 0.0.8
+---
 
 - [ ] refactor from callbacks to promises
 - [ ] badges in readme (code-coverage)
@@ -40,6 +40,10 @@
 - [ ] Also support dates in the query: https://github.com/primus/ejson
 - [ ] binary search suporting non distinct queries
 - [ ] automatically include join key fields in the mongo projection
+
+## Version 0.0.9 (28.10.2019)
+
+- [x] FIX: Did not waited for the async callback function to write the file before exit caused an empty file
 
 ## Version 0.0.8 (28.10.2019)
 

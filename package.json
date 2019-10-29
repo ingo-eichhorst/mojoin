@@ -1,6 +1,6 @@
 {
   "name": "mojoin",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Join two or more collections of one or more MongoDB databases",
   "directories": {
     "test": "test"
